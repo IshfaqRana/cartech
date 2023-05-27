@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "327788376449",
+    "project_id": "cartech-36860",
+    "storage_bucket": "cartech-36860.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:327788376449:android:a1eccdd804ed6a1b743880",
+        "android_client_info": {
+          "package_name": "com.example.cartech"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9Fq6cTyw3uRWGo5gdIyJhB3dYDbxaW18"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
