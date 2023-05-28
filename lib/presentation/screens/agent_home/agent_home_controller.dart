@@ -1,3 +1,4 @@
+import 'package:cartech/data/models/user_data_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
@@ -8,6 +9,7 @@ import '../../../utils/app_utils.dart';
 class AgentHomeController extends GetxController {
   RxBool isLoading = false.obs;
   Rx<VehicleDataModel> vehicle = VehicleDataModel().obs;
+  RxList<UserDataModel> users = [UserDataModel()].obs;
 
   getInitialValue() async {
     isLoading.value = true;
@@ -77,6 +79,33 @@ class AgentHomeController extends GetxController {
       Utils.printDebug(vehicle.value);
     }
 
+    isLoading.value = false;
+  }
+
+  getAllUser() async {
+    isLoading.value = true;
+    users.clear();
+    final userRef = await FirebaseFirestore.instance.collection("users").get();
+    List<QueryDocumentSnapshot<Map<String, dynamic>>> documents = userRef.docs;
+    for (var document in documents) {
+      Map<String, dynamic> userDataMap = document.data();
+      UserDataModel user = UserDataModel(
+        name: userDataMap.entries
+            .firstWhere((element) => element.key == "name")
+            .value,
+        email: userDataMap.entries
+            .firstWhere((element) => element.key == "email")
+            .value,
+        password: userDataMap.entries
+            .firstWhere((element) => element.key == "password")
+            .value,
+        uid: userDataMap.entries
+            .firstWhere((element) => element.key == "uid")
+            .value,
+      );
+
+      users.add(user);
+    }
     isLoading.value = false;
   }
 }

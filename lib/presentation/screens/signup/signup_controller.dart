@@ -58,9 +58,12 @@ class SignupController extends GetxController {
       );
       if (user) {
         final usersCollection = FirebaseFirestore.instance.collection("users");
-        await usersCollection
-            .doc(userCredential.user!.uid)
-            .set({'name': name, 'email': email, 'password': password});
+        await usersCollection.doc(userCredential.user!.uid).set({
+          'name': name,
+          'email': email,
+          'password': password,
+          'uid': userCredential.user!.uid
+        });
       } else {
         final usersCollection =
             FirebaseFirestore.instance.collection("car_agents");
@@ -82,6 +85,7 @@ class SignupController extends GetxController {
           "automatic": isAuto.value,
           "air_bags": airBags.value,
           "url": "",
+          'uid': userCredential.user!.uid
         });
         uploadImages(image, userCredential.user!.uid);
       }

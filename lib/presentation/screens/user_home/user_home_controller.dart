@@ -68,6 +68,9 @@ class UserHomeController extends GetxController {
         url: userDataMap.entries
             .firstWhere((element) => element.key == "url")
             .value,
+        uid: userDataMap.entries
+            .firstWhere((element) => element.key == "uid")
+            .value,
       );
 
       vehicles.add(vehicleDataModel);

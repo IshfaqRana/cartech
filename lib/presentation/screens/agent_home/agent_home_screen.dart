@@ -9,7 +9,7 @@ import '../../../utils/app_utils.dart';
 import 'agent_home_controller.dart';
 
 class AgentHomeScreen extends StatefulWidget {
-  AgentHomeScreen({Key? key}) : super(key: key);
+  const AgentHomeScreen({Key? key}) : super(key: key);
 
   @override
   State<AgentHomeScreen> createState() => _AgentHomeScreenState();
@@ -20,6 +20,7 @@ class _AgentHomeScreenState extends State<AgentHomeScreen> {
   @override
   void initState() {
     agentHomeController.getInitialValue();
+    agentHomeController.getAllUser();
     super.initState();
   }
 

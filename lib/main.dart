@@ -3,6 +3,8 @@
 import 'dart:async';
 
 import 'package:cartech/presentation/screens/agent_home/agent_home_screen.dart';
+import 'package:cartech/presentation/screens/main_screens/main_screen_for_agents.dart';
+import 'package:cartech/presentation/screens/main_screens/main_screen_for_users.dart';
 import 'package:cartech/presentation/screens/starting/startup_screen.dart';
 import 'package:cartech/presentation/screens/user_home/user_home_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -46,8 +48,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         home: isLoggedIn
             ? isUser
-                ? UserHomeScreen()
-                : AgentHomeScreen()
+                ? const DashBoardScreenForUser()
+                : const DashBoardScreenForAgents()
             : const StartupScreen(),
       );
     });

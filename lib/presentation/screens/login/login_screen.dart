@@ -54,7 +54,7 @@ class _LoginViewState extends State<LoginView> {
                     children: [
                       InkWell(
                         onTap: () {
-                          Get.to(() => WelcomePage());
+                          Get.to(() => const WelcomePage());
                         },
                         child: SizedBox(
                             height: 4.h,

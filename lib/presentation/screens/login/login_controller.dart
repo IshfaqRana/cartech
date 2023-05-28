@@ -1,5 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
+import 'package:cartech/presentation/screens/main_screens/main_screen_for_agents.dart';
+import 'package:cartech/presentation/screens/main_screens/main_screen_for_users.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -28,12 +30,12 @@ class LoginController extends GetxController {
         Utils.setSharedPrefs("accessToken",
             userCredential.credential?.accessToken ?? "accesToken");
         Utils.setSharedPrefsBool("user", false);
-        Get.offAll(() => AgentHomeScreen());
+        Get.offAll(() => const DashBoardScreenForAgents());
       } else {
         Utils.setSharedPrefs("accessToken",
             userCredential.credential?.accessToken ?? "accesToken");
         Utils.setSharedPrefsBool("user", true);
-        Get.offAll(() => UserHomeScreen());
+        Get.offAll(() => const DashBoardScreenForUser());
       }
       Utils.showToasts(context, "Logged in Successfully");
     } on FirebaseAuthException catch (e) {

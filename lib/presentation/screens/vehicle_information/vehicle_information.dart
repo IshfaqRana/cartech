@@ -7,6 +7,7 @@ import '../../../utils/app_colors.dart';
 import '../../../utils/app_images.dart';
 import '../../../utils/text_styles.dart';
 import '../../widgets/custom_button.dart';
+import '../chat_page/chat_page_for_users.dart';
 
 class VehicleInformation extends StatefulWidget {
   VehicleDataModel vehicle;
@@ -262,7 +263,10 @@ class _VehicleInformationState extends State<VehicleInformation> {
               text: "Chat with Car Owner",
               color: AppColors.kAppBGColor,
               onPressed: () {
-                // Utils.signOut(context);
+                Get.to(() => ChatScreenForUser(
+                      user_id: widget.vehicle.uid ?? "",
+                      timestamp: 0,
+                    ));
               },
             )
           ],

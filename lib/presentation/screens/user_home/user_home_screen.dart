@@ -10,7 +10,7 @@ import '../../../utils/app_utils.dart';
 import '../../../utils/text_styles.dart';
 
 class UserHomeScreen extends StatefulWidget {
-  UserHomeScreen({Key? key}) : super(key: key);
+  const UserHomeScreen({Key? key}) : super(key: key);
 
   @override
   State<UserHomeScreen> createState() => _UserHomeScreenState();
@@ -22,6 +22,7 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
   @override
   void initState() {
     userHomeController.getVehicleList();
+
     super.initState();
   }
 

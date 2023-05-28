@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:cartech/presentation/screens/signup/signup_controller.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:get/get.dart';
@@ -14,7 +13,6 @@ import '../../../utils/app_images.dart';
 import '../../../utils/app_utils.dart';
 import '../../../utils/text_styles.dart';
 import '../../widgets/custom_button.dart';
-import '../../widgets/image_grid_view.dart';
 import '../starting/welcome_page.dart';
 
 class SignupView extends StatefulWidget {
@@ -88,7 +86,7 @@ class _SignupViewState extends State<SignupView> {
                   children: [
                     InkWell(
                       onTap: () {
-                        Get.to(() => WelcomePage());
+                        Get.to(() => const WelcomePage());
                       },
                       child: SizedBox(
                           height: 4.h,
@@ -723,7 +721,7 @@ class _SignupViewState extends State<SignupView> {
                                 int.tryParse(priceController.text.trim()) ?? 20,
                                 widget.isUser,
                                 context,
-                                image!,
+                                image ?? File("path"),
                               );
                             }
                           }

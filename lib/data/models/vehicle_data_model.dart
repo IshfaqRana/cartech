@@ -16,6 +16,7 @@ class VehicleDataModel {
   final bool? automatic;
   final bool? airBags;
   final String? url;
+  final String? uid;
 
   VehicleDataModel({
     this.name,
@@ -35,5 +36,6 @@ class VehicleDataModel {
     this.automatic,
     this.airBags,
     this.url,
+    this.uid,
   });
 }

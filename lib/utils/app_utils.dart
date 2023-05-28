@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../presentation/screens/starting/welcome_page.dart';
@@ -89,5 +90,37 @@ class Utils {
     } catch (e) {
       showToast('Error signing out: $e');
     }
+  }
+
+  static String readTimestamp(int timestamp) {
+    DateTime now = DateTime.now();
+    var format = DateFormat('HH:mm a');
+    DateTime date = DateTime.fromMillisecondsSinceEpoch(timestamp);
+    var diff = now.difference(date);
+    var time = '';
+    bool condition1 = (diff.inSeconds > 0 && diff.inMinutes == 0);
+    bool condition2 = (diff.inMinutes > 0 && diff.inHours == 0);
+    bool condition3 = ((diff.inHours > 0 && diff.inDays == 0));
+    if (condition1) {
+      time = 'Now';
+    } else if (condition2) {
+      time = '${diff.inMinutes} Minutes AGO';
+    } else if (condition3) {
+      time = '${diff.inHours} Hours AGO';
+    } else if (diff.inDays > 0 && diff.inDays < 7) {
+      if (diff.inDays == 1) {
+        time = '${diff.inDays} DAY AGO';
+      } else {
+        time = '${diff.inDays} DAYS AGO';
+      }
+    } else {
+      if (diff.inDays == 7) {
+        time = '${(diff.inDays / 7).floor()} WEEK AGO';
+      } else {
+        time = '${(diff.inDays / 7).floor()} WEEKS AGO';
+      }
+    }
+
+    return time;
   }
 }
