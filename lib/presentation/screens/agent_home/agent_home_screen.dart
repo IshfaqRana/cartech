@@ -32,7 +32,7 @@ class _AgentHomeScreenState extends State<AgentHomeScreen> {
     return Obx(() => Scaffold(
           appBar: AppBar(
             title: Text(
-              "Dashboard",
+              "Cartech",
               textAlign: TextAlign.center,
               style: AppTextStyles.regBlack12Bold,
             ),

@@ -22,7 +22,7 @@ class _DashBoardState extends State<DashBoard> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Dashboard",
+          "Cartech",
           textAlign: TextAlign.center,
           style: AppTextStyles.regBlack12Bold,
         ),
