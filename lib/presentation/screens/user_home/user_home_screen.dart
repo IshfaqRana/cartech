@@ -47,135 +47,139 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
                 child: Padding(
                   padding: EdgeInsets.all(2.w),
                   child: Column(children: [
-                    ListView.builder(
-                        shrinkWrap: true,
-                        itemCount: userHomeController.vehicles.length,
-                        itemBuilder: (context, index) {
-                          VehicleDataModel vehicle =
-                              userHomeController.vehicles[index];
-                          return Column(
-                            children: [
-                              InkWell(
-                                onTap: () {
-                                  Get.to(() =>
-                                      VehicleInformation(vehicle: vehicle));
-                                },
-                                child: Container(
-                                  height: 25.h,
-                                  decoration: BoxDecoration(
-                                    color: AppColors.kWhite,
-                                    borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(1.0.h),
-                                        topRight: Radius.circular(1.0.h)),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: const Color(0xFF000000)
-                                            .withOpacity(0.04),
-                                        blurRadius: 0.5.h,
-                                        spreadRadius: 0.2.h,
-                                        offset: Offset(0.5.h, 0.5.h),
-                                      ),
-                                      BoxShadow(
-                                        color: const Color(0xFF000000)
-                                            .withOpacity(0.04),
-                                        blurRadius: 1.0.h,
-                                        spreadRadius: 0.1.w,
-                                        offset: Offset(-0.2.h, -0.2.h),
-                                      ),
-                                    ],
-                                  ),
-                                  child: Row(
-                                    children: [
-                                      SizedBox(
-                                        width: 55.w,
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              SizedBox(
-                                                height: 2.h,
-                                              ),
-                                              SizedBox(
-                                                height: 4.h,
-                                                child: Text(
-                                                  vehicle.category ??
-                                                      "Category",
-                                                  textAlign: TextAlign.center,
-                                                  style: AppTextStyles
-                                                      .regBlack12Bold,
+                    SizedBox(
+                      height: 83.h,
+                      child: ListView.builder(
+                          shrinkWrap: true,
+                          itemCount: userHomeController.vehicles.length,
+                          itemBuilder: (context, index) {
+                            VehicleDataModel vehicle =
+                                userHomeController.vehicles[index];
+                            return Column(
+                              children: [
+                                InkWell(
+                                  onTap: () {
+                                    Get.to(() =>
+                                        VehicleInformation(vehicle: vehicle));
+                                  },
+                                  child: Container(
+                                    height: 25.h,
+                                    decoration: BoxDecoration(
+                                      color: AppColors.kWhite,
+                                      borderRadius: BorderRadius.only(
+                                          topLeft: Radius.circular(1.0.h),
+                                          topRight: Radius.circular(1.0.h)),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: const Color(0xFF000000)
+                                              .withOpacity(0.04),
+                                          blurRadius: 0.5.h,
+                                          spreadRadius: 0.2.h,
+                                          offset: Offset(0.5.h, 0.5.h),
+                                        ),
+                                        BoxShadow(
+                                          color: const Color(0xFF000000)
+                                              .withOpacity(0.04),
+                                          blurRadius: 1.0.h,
+                                          spreadRadius: 0.1.w,
+                                          offset: Offset(-0.2.h, -0.2.h),
+                                        ),
+                                      ],
+                                    ),
+                                    child: Row(
+                                      children: [
+                                        SizedBox(
+                                          width: 55.w,
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                SizedBox(
+                                                  height: 2.h,
                                                 ),
-                                              ),
-                                              SizedBox(
-                                                height: 1.5.h,
-                                              ),
-                                              SizedBox(
-                                                height: 3.h,
-                                                child: Text(
-                                                  vehicle.vehicleName ??
-                                                      "Vehicle Name",
-                                                  textAlign: TextAlign.center,
-                                                  style:
-                                                      AppTextStyles.regBlack10,
+                                                SizedBox(
+                                                  height: 4.h,
+                                                  child: Text(
+                                                    vehicle.category ??
+                                                        "Category",
+                                                    textAlign: TextAlign.center,
+                                                    style: AppTextStyles
+                                                        .regBlack12Bold,
+                                                  ),
                                                 ),
-                                              ),
-                                              SizedBox(
-                                                height: 2.5.h,
-                                              ),
-                                              SizedBox(
-                                                height: 3.h,
-                                                child: Text(
-                                                  "Starting Price",
-                                                  textAlign: TextAlign.center,
-                                                  style:
-                                                      AppTextStyles.regGreen10,
+                                                SizedBox(
+                                                  height: 1.5.h,
                                                 ),
-                                              ),
-                                              SizedBox(
-                                                height: 1.h,
-                                              ),
-                                              SizedBox(
-                                                height: 3.h,
-                                                child: Row(
-                                                  children: [
-                                                    Text(
-                                                      "\$${vehicle.price}",
-                                                      textAlign:
-                                                          TextAlign.center,
-                                                      style: AppTextStyles
-                                                          .regBlack10,
-                                                    ),
-                                                    Text(
-                                                      "/Day",
-                                                      textAlign:
-                                                          TextAlign.center,
-                                                      style: AppTextStyles
-                                                          .regGreen10,
-                                                    ),
-                                                  ],
+                                                SizedBox(
+                                                  height: 3.h,
+                                                  child: Text(
+                                                    vehicle.vehicleName ??
+                                                        "Vehicle Name",
+                                                    textAlign: TextAlign.center,
+                                                    style: AppTextStyles
+                                                        .regBlack10,
+                                                  ),
                                                 ),
-                                              ),
-                                            ],
+                                                SizedBox(
+                                                  height: 2.5.h,
+                                                ),
+                                                SizedBox(
+                                                  height: 3.h,
+                                                  child: Text(
+                                                    "Starting Price",
+                                                    textAlign: TextAlign.center,
+                                                    style: AppTextStyles
+                                                        .regGreen10,
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  height: 1.h,
+                                                ),
+                                                SizedBox(
+                                                  height: 3.h,
+                                                  child: Row(
+                                                    children: [
+                                                      Text(
+                                                        "\$${vehicle.price}",
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                        style: AppTextStyles
+                                                            .regBlack10,
+                                                      ),
+                                                      Text(
+                                                        "/Day",
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                        style: AppTextStyles
+                                                            .regGreen10,
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                      Center(
-                                          child: SizedBox(
-                                        height: 35.w,
-                                        width: 35.w,
-                                        child: Image.network(vehicle.url ?? ""),
-                                      ))
-                                    ],
+                                        Center(
+                                            child: SizedBox(
+                                          height: 35.w,
+                                          width: 35.w,
+                                          child:
+                                              Image.network(vehicle.url ?? ""),
+                                        ))
+                                      ],
+                                    ),
                                   ),
                                 ),
-                              ),
-                              SizedBox(
-                                height: 1.h,
-                              )
-                            ],
-                          );
-                        })
+                                SizedBox(
+                                  height: 1.h,
+                                )
+                              ],
+                            );
+                          }),
+                    )
                   ]),
                 ),
               ),

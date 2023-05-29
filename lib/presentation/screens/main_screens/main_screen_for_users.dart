@@ -1,3 +1,5 @@
+import 'package:cartech/presentation/screens/booking/booking.dart';
+import 'package:cartech/presentation/screens/booking/navigation.dart';
 import 'package:cartech/presentation/screens/dashboard/dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -29,6 +31,8 @@ class _DashBoardScreenForUserState extends State<DashBoardScreenForUser> {
   List<Widget> _buildScreens() {
     return [
       DashBoard(),
+      BookingScreen(),
+      NavigationScreen(),
       const ChatWithBarberLayout(),
     ];
   }
@@ -38,6 +42,20 @@ class _DashBoardScreenForUserState extends State<DashBoardScreenForUser> {
       PersistentBottomNavBarItem(
         icon: Icon(Icons.home, size: 5.5.w),
         title: ("Home"),
+        textStyle: AppTextStyles.lightBlue9,
+        activeColorPrimary: CupertinoColors.activeBlue,
+        inactiveColorPrimary: CupertinoColors.systemGrey,
+      ),
+      PersistentBottomNavBarItem(
+        icon: Icon(Icons.calendar_month, size: 5.5.w),
+        title: ("Booking"),
+        textStyle: AppTextStyles.lightBlue9,
+        activeColorPrimary: CupertinoColors.activeBlue,
+        inactiveColorPrimary: CupertinoColors.systemGrey,
+      ),
+      PersistentBottomNavBarItem(
+        icon: Icon(Icons.navigation, size: 5.5.w),
+        title: ("Navigation"),
         textStyle: AppTextStyles.lightBlue9,
         activeColorPrimary: CupertinoColors.activeBlue,
         inactiveColorPrimary: CupertinoColors.systemGrey,
