@@ -1,7 +1,6 @@
-import 'package:cartech/presentation/screens/agent_home/agent_home_screen.dart';
+import 'package:cartech/presentation/screens/dashboard/dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:sizer/sizer.dart';
 
@@ -29,8 +28,8 @@ class _DashBoardScreenForUserState extends State<DashBoardScreenForUser> {
 
   List<Widget> _buildScreens() {
     return [
-      UserHomeScreen(),
-      ChatWithBarberLayout(),
+      DashBoard(),
+      const ChatWithBarberLayout(),
     ];
   }
 

@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../utils/app_colors.dart';
+import '../../../utils/app_images.dart';
 import '../../../utils/app_utils.dart';
 import 'agent_home_controller.dart';
 
@@ -17,6 +18,8 @@ class AgentHomeScreen extends StatefulWidget {
 
 class _AgentHomeScreenState extends State<AgentHomeScreen> {
   AgentHomeController agentHomeController = Get.put(AgentHomeController());
+
+  TextEditingController search = TextEditingController();
   @override
   void initState() {
     agentHomeController.getInitialValue();
@@ -27,6 +30,27 @@ class _AgentHomeScreenState extends State<AgentHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Obx(() => Scaffold(
+          appBar: AppBar(
+            title: Text(
+              "Dashboard",
+              textAlign: TextAlign.center,
+              style: AppTextStyles.regBlack12Bold,
+            ),
+            actions: [
+              Padding(
+                padding: EdgeInsets.only(right: 6.w),
+                child: InkWell(
+                    onTap: () {
+                      Utils.signOut(context);
+                    },
+                    child: Icon(
+                      Icons.logout,
+                      size: 25,
+                      color: AppColors.kBGWhite,
+                    )),
+              )
+            ],
+          ),
           body: agentHomeController.isLoading.value
               ? Center(
                   child: CircularProgressIndicator(
@@ -39,6 +63,50 @@ class _AgentHomeScreenState extends State<AgentHomeScreen> {
                   padding: EdgeInsets.all(2.w),
                   child: Column(
                     children: [
+                      SizedBox(
+                        height: 2.h,
+                      ),
+                      SizedBox(
+                          height: 5.h,
+                          child: TextFormField(
+                            style: AppTextStyles.regBlackTextField12,
+                            maxLines: 1,
+                            controller: search,
+                            decoration: InputDecoration(
+                              suffixIcon: SizedBox(
+                                  width: 12.w,
+                                  child: Row(
+                                    children: [
+                                      Container(
+                                          decoration: BoxDecoration(
+                                              color: AppColors.kAppBGColor,
+                                              borderRadius:
+                                                  BorderRadius.circular(2.w)),
+                                          width: 8.w,
+                                          height: 8.w,
+                                          child: Icon(
+                                            Icons.search,
+                                            size: 25,
+                                            color: AppColors.kBGWhite,
+                                          )),
+                                    ],
+                                  )),
+                              hintText: "Search",
+                              border: const OutlineInputBorder(),
+                              hintStyle: AppTextStyles.regBlackTextField12,
+                            ),
+                          )),
+                      SizedBox(
+                        height: 5.h,
+                      ),
+                      SizedBox(
+                        height: 20.h,
+                        width: 94.w,
+                        child: Image.asset(
+                          AppImages.user,
+                          fit: BoxFit.fill,
+                        ),
+                      ),
                       SizedBox(
                         height: 5.h,
                       ),

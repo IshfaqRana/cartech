@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../../utils/app_utils.dart';
 import '../../../utils/text_styles.dart';
 
 class UserHomeScreen extends StatefulWidget {
@@ -36,21 +35,6 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
             textAlign: TextAlign.center,
             style: AppTextStyles.regBlack12Bold,
           ),
-          automaticallyImplyLeading: false,
-          actions: [
-            Padding(
-              padding: EdgeInsets.only(right: 6.w),
-              child: InkWell(
-                  onTap: () {
-                    Utils.signOut(context);
-                  },
-                  child: Icon(
-                    Icons.logout,
-                    size: 25,
-                    color: AppColors.kBGWhite,
-                  )),
-            )
-          ],
         ),
         body: userHomeController.isLoading.value
             ? Center(

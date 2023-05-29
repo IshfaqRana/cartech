@@ -1,8 +1,6 @@
 import 'package:cartech/data/models/user_data_model.dart';
-import 'package:cartech/data/models/vehicle_data_model.dart';
 import 'package:cartech/presentation/screens/agent_home/agent_home_controller.dart';
 import 'package:cartech/presentation/screens/chat_page/chat_page_for_car_agent.dart';
-import 'package:cartech/presentation/screens/user_home/user_home_controller.dart';
 import 'package:cartech/utils/app_images.dart';
 import 'package:cartech/utils/app_utils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -70,9 +68,7 @@ class AllChatforCarAgents extends StatelessWidget {
                                   agentHomeController.users.firstWhereOrNull(
                                       (element) => element.uid == userID);
                               Utils.printDebug(userID);
-                              for (var element in agentHomeController.users) {
-                                Utils.printDebug(element.uid);
-                              }
+
                               Utils.printDebug(agentHomeController.users
                                   .firstWhere(
                                       (element) => element.uid == userID));

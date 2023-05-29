@@ -1,14 +1,11 @@
 import 'package:cartech/presentation/screens/agent_home/agent_home_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../utils/text_styles.dart';
 import '../chat_page/all_chats_for_car_agents.dart';
-import '../chat_page/all_chats_for_users.dart';
-import '../user_home/user_home_screen.dart';
 
 class DashBoardScreenForAgents extends StatefulWidget {
   const DashBoardScreenForAgents({
@@ -31,8 +28,8 @@ class _DashBoardScreenForAgentsState extends State<DashBoardScreenForAgents> {
 
   List<Widget> _buildScreens() {
     return [
-      AgentHomeScreen(),
-      AllChatforCarAgents(),
+      const AgentHomeScreen(),
+      const AllChatforCarAgents(),
     ];
   }
 

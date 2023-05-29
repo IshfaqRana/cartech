@@ -8,8 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../utils/app_utils.dart';
-import '../agent_home/agent_home_screen.dart';
-import '../user_home/user_home_screen.dart';
 
 class LoginController extends GetxController {
   RxBool isVisible = false.obs;
