@@ -5,6 +5,8 @@ import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../utils/text_styles.dart';
+import '../booking/booking.dart';
+import '../booking/navigation.dart';
 import '../chat_page/all_chats_for_car_agents.dart';
 
 class DashBoardScreenForAgents extends StatefulWidget {
@@ -29,6 +31,8 @@ class _DashBoardScreenForAgentsState extends State<DashBoardScreenForAgents> {
   List<Widget> _buildScreens() {
     return [
       const AgentHomeScreen(),
+      BookingScreen(),
+      NavigationScreen(),
       const AllChatforCarAgents(),
     ];
   }
@@ -38,6 +42,20 @@ class _DashBoardScreenForAgentsState extends State<DashBoardScreenForAgents> {
       PersistentBottomNavBarItem(
         icon: Icon(Icons.home, size: 5.5.w),
         title: ("Home"),
+        textStyle: AppTextStyles.lightBlue9,
+        activeColorPrimary: CupertinoColors.activeBlue,
+        inactiveColorPrimary: CupertinoColors.systemGrey,
+      ),
+      PersistentBottomNavBarItem(
+        icon: Icon(Icons.calendar_month, size: 5.5.w),
+        title: ("Booking"),
+        textStyle: AppTextStyles.lightBlue9,
+        activeColorPrimary: CupertinoColors.activeBlue,
+        inactiveColorPrimary: CupertinoColors.systemGrey,
+      ),
+      PersistentBottomNavBarItem(
+        icon: Icon(Icons.navigation, size: 5.5.w),
+        title: ("Navigation"),
         textStyle: AppTextStyles.lightBlue9,
         activeColorPrimary: CupertinoColors.activeBlue,
         inactiveColorPrimary: CupertinoColors.systemGrey,
