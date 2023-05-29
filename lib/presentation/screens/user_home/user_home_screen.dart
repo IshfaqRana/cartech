@@ -9,7 +9,8 @@ import 'package:sizer/sizer.dart';
 import '../../../utils/text_styles.dart';
 
 class UserHomeScreen extends StatefulWidget {
-  const UserHomeScreen({Key? key}) : super(key: key);
+  final String type;
+  const UserHomeScreen({Key? key, required this.type}) : super(key: key);
 
   @override
   State<UserHomeScreen> createState() => _UserHomeScreenState();
@@ -20,7 +21,7 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
 
   @override
   void initState() {
-    userHomeController.getVehicleList();
+    userHomeController.getVehicleList(widget.type);
 
     super.initState();
   }

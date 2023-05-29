@@ -116,7 +116,9 @@ class _DashBoardState extends State<DashBoard> {
                 children: [
                   InkWell(
                     onTap: () {
-                      Get.to(() => UserHomeScreen());
+                      Get.to(() => UserHomeScreen(
+                            type: "cars",
+                          ));
                     },
                     child: SizedBox(
                       width: 44.w,
@@ -129,7 +131,9 @@ class _DashBoardState extends State<DashBoard> {
                   ),
                   InkWell(
                     onTap: () {
-                      Get.to(() => UserHomeScreen());
+                      Get.to(() => UserHomeScreen(
+                            type: "pickup",
+                          ));
                     },
                     child: SizedBox(
                       width: 44.w,
@@ -152,7 +156,9 @@ class _DashBoardState extends State<DashBoard> {
                 children: [
                   InkWell(
                     onTap: () {
-                      Get.to(() => UserHomeScreen());
+                      Get.to(() => UserHomeScreen(
+                            type: "van",
+                          ));
                     },
                     child: SizedBox(
                       width: 44.w,
@@ -165,7 +171,9 @@ class _DashBoardState extends State<DashBoard> {
                   ),
                   InkWell(
                     onTap: () {
-                      Get.to(() => UserHomeScreen());
+                      Get.to(() => UserHomeScreen(
+                            type: "suv",
+                          ));
                     },
                     child: SizedBox(
                       width: 44.w,

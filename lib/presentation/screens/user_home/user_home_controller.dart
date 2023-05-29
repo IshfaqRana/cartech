@@ -8,7 +8,7 @@ class UserHomeController extends GetxController {
 
   RxList<VehicleDataModel> vehicles = [VehicleDataModel()].obs;
 
-  getVehicleList() async {
+  getVehicleList(type) async {
     isLoading.value = true;
     vehicles.clear();
     final userRef =
